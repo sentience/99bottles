@@ -2,8 +2,16 @@
 class Bottles
   def verse(num_bottles)
     <<-VERSE
-#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
-Take one down and pass it around, #{num_bottles - 1} bottles of beer on the wall.
+#{count(num_bottles)} of beer on the wall, #{count(num_bottles)} of beer.
+Take one down and pass it around, #{count(num_bottles - 1)} of beer on the wall.
 VERSE
+  end
+
+  def count(num_bottles)
+    if num_bottles > 1
+      "#{num_bottles} bottles"
+    else
+      "#{num_bottles} bottle"
+    end
   end
 end
