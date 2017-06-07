@@ -1,9 +1,9 @@
 # 99 Bottles of OOP
 class Bottles
-  def verse(_num_bottles)
+  def verse(num_bottles)
     <<-VERSE
-99 bottles of beer on the wall, 99 bottles of beer.
-Take one down and pass it around, 98 bottles of beer on the wall.
+#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
+Take one down and pass it around, #{num_bottles - 1} bottles of beer on the wall.
 VERSE
   end
 end
