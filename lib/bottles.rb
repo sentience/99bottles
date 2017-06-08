@@ -1,5 +1,9 @@
 # 99 Bottles of OOP
 class Bottles
+  def song
+    verses(99, 0)
+  end
+
   def verses(start_verse, end_verse)
     (end_verse..start_verse).to_a.reverse.map { |num| verse(num) }.join("\n")
   end
