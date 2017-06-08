@@ -7,7 +7,7 @@ class Bottles
     remaining_phrases = phrases(remaining_bottles)
 
     <<-VERSE
-#{count} of beer on the wall, #{count} of beer.
+#{count.capitalize} of beer on the wall, #{count} of beer.
 #{consume_action}, #{remaining_phrases.count} of beer on the wall.
 VERSE
   end
@@ -67,6 +67,13 @@ end
 
 module Consume
   class Zero
+    def action(_num_bottles)
+      'Go to the store and buy some more'
+    end
+
+    def remaining(_num_bottles)
+      99
+    end
   end
 
   class One
