@@ -1,5 +1,9 @@
 # 99 Bottles of OOP
 class Bottles
+  def verses(start_verse, end_verse)
+    (end_verse..start_verse).to_a.reverse.map { |num| verse(num) }.join("\n")
+  end
+
   def verse(num_bottles)
     phrases = phrases(num_bottles)
     count = phrases.count
