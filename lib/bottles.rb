@@ -24,11 +24,11 @@ VERSE
 
   def phrases(num_bottles)
     counter, consumer = if num_bottles == 0
-                          [Count::Zero.new, Consume::Zero.new]
+                          [Count::Zero, Consume::Zero]
                         elsif num_bottles == 1
-                          [Count::One.new, Consume::One.new]
+                          [Count::One, Consume::One]
                         else
-                          [Count::Many.new, Consume::Many.new]
+                          [Count::Many, Consume::Many]
                         end
 
     Phrases.new(num_bottles: num_bottles, counter: counter, consumer: consumer)
@@ -40,8 +40,8 @@ class Phrases
 
   def initialize(num_bottles:, counter:, consumer:)
     @num_bottles = num_bottles
-    @counter = counter
-    @consumer = consumer
+    @counter = counter.new
+    @consumer = consumer.new
   end
 
   def count
